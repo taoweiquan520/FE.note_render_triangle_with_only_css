@@ -1,2 +1,2 @@
-# render_triangle_with_css
-FE,about rendering triangle with css(not bg-img or img tag),and some other extended usage.
+# 使用css绘制三角形
+前端方面一点个人小笔记，使用css绘制三角形（不使用背景图片或图片标签），以及其他的一些三角形相关的用法（个人见解）。
