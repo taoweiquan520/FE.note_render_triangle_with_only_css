@@ -9,6 +9,15 @@
 	</head>
     <body>
         <style type="text/css">
+            xmp {
+                width: 90%;
+                margin: 0 auto 10px;
+                border-radius: 20px;
+                font-size: 80%;
+                color: #808080;
+                background-color: #f0f0f0;
+            }
+
             #container {
                 width: 1200px;
                 margin: 50px auto;
@@ -25,25 +34,61 @@
                 border-radius: 5px;
                 float: left;
             }
+
+            #triangle {
+                width: 0;
+                height: 0;
+                margin: 25px auto;
+                border-left: 30px solid transparent;
+                border-right: 30px solid transparent;
+                border-bottom: 20px solid #ff0000;
+            }
+
+            #imgContainer img {
+                display: block;
+                width: 350px;
+                margin: 20px auto;
+            }
         </style>
 
         <div id="container">
             <h4>基础三角形绘制</h4>
             <div id="code">
+                <h5>代码部分</h5>
                 <div id="codeContainer">
-                    <h5>代码部分</h5>
+                    <hr>
+                    <h6>【&nbsp;&nbsp;html部分】</h6>
+                    <xmp>
+                        <div id="triangle">
+                        </div>
+                    </xmp>
+                    <hr>
+                    <h6>【&nbsp;&nbsp;css部分】</h6>
+                    <xmp>
+                        #triangle {
+                            width: 0;
+                            height: 0;
+                            margin: 25px auto;
+                            border-left: 30px solid transparent;
+                            border-right: 30px solid transparent;
+                            border-bottom: 20px solid #ff0000;
+                        }
+                    </xmp>
                 </div>
             </div>
 
             <div id="renderResult">
+                <h5>渲染结果</h5>
                 <div class="renderContainer">
-                    <h5>渲染结果</h5>
+                    <div id="triangle">
+                    </div>
                 </div>
             </div>
 
             <div id="imgAnalysis">
+                <h5>图解</h5>
                 <div id="imgContainer">
-                    <h5>图解</h5>
+                    <img src="./res/img/demo1.png">
                 </div>
             </div>
         </div>
