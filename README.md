@@ -10,4 +10,4 @@
 # 2.由三角形联想到的
 现阶段想到的，就是结合伪类:after，主要是导航栏中的.selected(或者.active)中的样式
 
-ps：关于项目的文档结构，好像里面的bootstrap和jQuery基（根）本没有用到，不过出于习惯，另外就是bootstrap修改了很多默认样式，看起来更舒服。
+ps：关于项目的文档结构，好像里面的bootstrap、fontawesome和jQuery基（根）本没有用到，只是出于习惯，另外就是bootstrap修改了很多默认样式，看起来更舒服。
