@@ -9,6 +9,15 @@
 	</head>
     <body>
         <style type="text/css">
+            xmp {
+                width: 90%;
+                margin: 0 auto 10px;
+                border-radius: 20px;
+                font-size: 80%;
+                color: #808080;
+                background-color: #f0f0f0;
+            }
+
             #container {
                 width: 1200px;
                 margin: 50px auto;
@@ -25,25 +34,104 @@
                 border-radius: 5px;
                 float: left;
             }
+
+            #navContainer li {
+                position: relative;
+                padding: 5px 25px;
+                color: #ffffff;
+                background-color: #000000;
+            }
+            #navContainer li.active:after {
+                content: "";
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+                border-bottom: 5px solid #ffffff;
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                margin-left: -5px;
+            }
         </style>
 
         <div id="container">
-            <h4>由三角形联想到的...</h4>
+            <h4>基础三角形绘制</h4>
             <div id="code">
+                <h5>&nbsp;代码部分</h5>
                 <div id="codeContainer">
-                    <h5>代码部分</h5>
+                    <hr>
+                    <h6>&nbsp;&nbsp;【html部分】</h6>
+                    <xmp>
+                        <div id="navContainer">
+                            <ul class="list-unstyled list-inline text-center">
+                                <li class="active">
+                                    nav-01
+                                </li>
+                                <li>
+                                    nav-02
+                                </li>
+                                <li>
+                                    nav-03
+                                </li>
+                            </ul>
+                        </div>
+                    </xmp>
+                    <hr>
+                    <h6>&nbsp;&nbsp;【css部分】</h6>
+                    <xmp>
+                        #navContainer li {
+                            position: relative;
+                            padding: 5px 25px;
+                            color: #ffffff;
+                            background-color: #000000;
+                        }
+                        #navContainer li.active:after {
+                            content: "";
+                            border-left: 5px solid transparent;
+                            border-right: 5px solid transparent;
+                            border-bottom: 5px solid #ffffff;
+                            position: absolute;
+                            bottom: 0;
+                            left: 50%;
+                            margin-left: -5px;
+                        }
+                    </xmp>
+                    <hr>
+                    <h6>&nbsp;&nbsp;【js部分】</h6>
+                    <xmp>
+                        $('#navContainer li').on('click', function() {
+                            var $thisLi   = $(this),
+                                $activeLi = $('#navContainer li.active');
+
+                            $activeLi.removeClass('active');
+                            $thisLi.addClass('active');
+                        })
+                    </xmp>
                 </div>
             </div>
 
             <div id="renderResult">
+                <h5>&nbsp;渲染结果</h5>
                 <div class="renderContainer">
-                    <h5>渲染结果</h5>
+                    <div id="navContainer">
+                        <ul class="list-unstyled list-inline text-center">
+                            <li class="active">
+                                nav-01
+                            </li>
+                            <li>
+                                nav-02
+                            </li>
+                            <li>
+                                nav-03
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
             <div id="imgAnalysis">
+                <h5>&nbsp;图解</h5>
                 <div id="imgContainer">
-                    <h5>图解</h5>
+                    <h5 class="text-danger text-center">NULL</h5>
                 </div>
             </div>
         </div>
@@ -53,6 +141,13 @@
         <script src="./bootstrap/js/bootstrap.min.js"></script>
         <script type="text/javascript">
             /* custom js */
+            $('#navContainer li').on('click', function() {
+                var $thisLi   = $(this),
+                    $activeLi = $('#navContainer li.active');
+
+                $activeLi.removeClass('active');
+                $thisLi.addClass('active');
+            })
         </script>
 	</body>
 </html>
