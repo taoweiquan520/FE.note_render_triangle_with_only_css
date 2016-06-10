@@ -9,6 +9,15 @@
 	</head>
     <body>
         <style type="text/css">
+            xmp {
+                width: 90%;
+                margin: 0 auto 10px;
+                border-radius: 20px;
+                font-size: 80%;
+                color: #808080;
+                background-color: #f0f0f0;
+            }
+
             #container {
                 width: 1200px;
                 margin: 50px auto;
@@ -25,25 +34,132 @@
                 border-radius: 5px;
                 float: left;
             }
+
+            #triangle1 {
+                width: 0;
+                height: 0;
+                margin: 25px auto;
+                border-right: 30px solid transparent;
+                border-bottom: 20px solid #ff0000;
+            }
+
+            #triangle2 {
+                position: relative;
+                width: 100px;
+                height: 30px;
+                margin: 20px auto;
+                background-color: #000000;
+            }
+            #triangle2:before {
+                position: absolute;
+                content: "";
+                margin-top: -10px;
+                margin-left: -10px;
+                border-right: 10px solid transparent;
+                border-bottom: 10px solid #ff0000;
+            }
+            #triangle2:after {
+                position: absolute;
+                content: "";
+                right: 0;
+                bottom: 0;
+                margin-right: -10px;
+                margin-bottom: -10px;
+                border-right: 10px solid transparent;
+                border-bottom: 10px solid #ff0000;
+            }
         </style>
 
         <div id="container">
-            <h4>基础三角形绘制——extension</h4>
+            <h4>基础三角形绘制——extendsion</h4>
             <div id="code">
-                <div id="codeContainer">
-                    <h5>代码部分</h5>
+                <h5>&nbsp;代码部分</h5>
+                <ul id="codeTabs" class="nav nav-tabs">
+                    <li class="active">
+                        <a href="#codeContainer1" data-toggle="tab">
+                            <h6>&nbsp;①三角形绘制的延伸</h6>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#codeContainer2" data-toggle="tab">
+                            <h6>&nbsp;②由before及after联想到的</h6>
+                        </a>
+                    </li>
+                </ul>
+                
+                <div class="tab-content">
+                    <div id="codeContainer1" class="tab-pane fade in active">
+                        <h6>&nbsp;&nbsp;【html部分】</h6>
+                        <xmp>
+                            <div id="triangle1">
+                            </div>
+                        </xmp>
+                        <hr>
+                        <h6>&nbsp;&nbsp;【css部分】</h6>
+                        <xmp>
+                            #triangle1 {
+                                width: 0;
+                                height: 0;
+                                margin: 25px auto;
+                                border-right: 30px solid transparent;
+                                border-bottom: 20px solid #ff0000;
+                            }
+                        </xmp>
+                    </div>
+                    <div id="codeContainer2" class="tab-pane fade">
+                        <h6>&nbsp;&nbsp;【html部分】</h6>
+                        <xmp>
+                            <div id="triangle2">
+                            </div>
+                        </xmp>
+                        <hr>
+                        <h6>&nbsp;&nbsp;【css部分】</h6>
+                        <xmp>
+                            #triangle2 {
+                                position: relative;
+                                width: 100px;
+                                height: 30px;
+                                margin: 20px auto;
+                                background-color: #000000;
+                            }
+                            #triangle2:before {
+                                position: absolute;
+                                content: "";
+                                margin-top: -10px;
+                                margin-left: -10px;
+                                border-right: 10px solid transparent;
+                                border-bottom: 10px solid #ff0000;
+                            }
+                            #triangle2:after {
+                                position: absolute;
+                                content: "";
+                                right: 0;
+                                bottom: 0;
+                                margin-right: -10px;
+                                margin-bottom: -10px;
+                                border-right: 10px solid transparent;
+                                border-bottom: 10px solid #ff0000;
+                            }
+                        </xmp>
+                    </div>
                 </div>
             </div>
 
             <div id="renderResult">
+                <h5>&nbsp;渲染结果</h5>
                 <div class="renderContainer">
-                    <h5>渲染结果</h5>
+                    <div id="triangle1">
+                    </div>
+                    <hr>
+                    <div id="triangle2">
+                    </div>
                 </div>
             </div>
 
             <div id="imgAnalysis">
+                <h5>&nbsp;图解</h5>
                 <div id="imgContainer">
-                    <h5>图解</h5>
+                    <h5 class="text-danger text-center">NULL</h5>
                 </div>
             </div>
         </div>
@@ -53,6 +169,10 @@
         <script src="./bootstrap/js/bootstrap.min.js"></script>
         <script type="text/javascript">
             /* custom js */
+            $('#codeTabs a').click(function (e) {
+                e.preventDefault()
+                $(this).tab('show')
+            })
         </script>
 	</body>
 </html>
